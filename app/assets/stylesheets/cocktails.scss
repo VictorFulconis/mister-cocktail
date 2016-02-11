@@ -4,17 +4,24 @@
 
 .wrapper {
   .card {
+    border: 1px solid gray;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
-    height: 400px;
-  }
-  #cocktail-name {
-    margin: 0 0 25px 0;
-  }
-  #newdosebtn {
-    margin: 25px 0 0 0;
+    border-radius: 10px;
+    margin: 50px 0 20px 0;
+    #cocktail-name{
+      margin: 0 0 25px 0;
+      text-align: center;
+    }
+    #doseslist {
+      text-align: left;
+      line-height: 40px;
+      i {
+        margin-right: 30px;
+      }
+    }
   }
   ul {
     list-style: none;
@@ -22,5 +29,5 @@
 }
 
 #back {
-  margin: 50px 0 0 0;
+  margin: 75px 0 0 0;
 }

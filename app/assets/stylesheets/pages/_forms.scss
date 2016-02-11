@@ -1,7 +1,8 @@
 .forms-wrapper {
   display: flex;
-  align-items: center;
+  justify-content: center;
   .app-forms {
     width: 400px;
+    padding: 150px 0 0 0;
   }
 }
