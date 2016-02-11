@@ -1,8 +1,8 @@
 <%= link_to 'Back to cocktail list', cocktails_path, class: "btn btn-danger" %>
 <h3> <%= @cocktail.name %> </h3>
 <ul>
-  <%= @doses.each do |dose| %>
-    <li>Ingredient: <%= dose.ingredient %> / Instruction: <%= dose.description %> / <%= link_to "Suppress", cocktail_dose_path(@cocktail.id, dose.id), method: 'delete' %></li>
+  <% @doses.each do |dose| %>
+    <li>Ingredient: <%= dose.ingredient.name %> / Instruction: <%= dose.description %> / <%= link_to "Suppress", cocktail_dose_path(@cocktail.id, dose.id), method: 'delete' %></li>
   <% end %>
 </ul>
 <%= link_to 'Add an instruction', new_cocktail_dose_path(@cocktail.id), class: "btn btn-success" %>
