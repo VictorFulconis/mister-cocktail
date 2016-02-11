@@ -1,3 +1,26 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+  }
+  #cocktail-name {
+    margin: 0 0 25px 0;
+  }
+  #newdosebtn {
+    margin: 25px 0 0 0;
+  }
+  ul {
+    list-style: none;
+  }
+}
+
+#back {
+  margin: 50px 0 0 0;
+}

@@ -1,7 +1,14 @@
-<%= link_to 'Create a new cocktail', new_cocktail_path, class: "btn btn-danger" %>
-<h1>Tous vos cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-  <h3> <%= cocktail.name %> </h3>
-  <%= link_to 'See the recipe', cocktail_path(cocktail.id), class: "btn btn-success " %>
-<% end %>
-
+<div id="cocktail-list" class="text-center">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-offset-4 col-xs-4">
+          <div class="card">
+            <h3> <%= cocktail.name %> </h3>
+            <%= link_to 'See the recipe', cocktail_path(cocktail.id), class: "btn btn-success " %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
