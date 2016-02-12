@@ -1,28 +1,39 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-xs-offset-4 col-xs-4">
-        <div class="card">
-          <div id="cocktail-name">
-            <h2> <%= @cocktail.name.capitalize %> </h2>
-          </div>
-          <div id="doseslist">
-            <ul>
-              <% @doses.each do |dose| %>
-                <li><%= link_to (cocktail_dose_path(@cocktail.id, dose.id)),  method: 'delete' do %><i class='fa fa-times' ></i><%end %> <%= dose.ingredient.name.capitalize %>: <%= dose.description %></li>
-              <% end %>
-            </ul>
-          </div>
+      <div class="col-xs-4">
+        <div class="cocktail-image">
+          <%= cl_image_tag @cocktail.photo.path, width: 300, height: 600, crop: :fill %>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-offset-4 col-xs-4">
-        <%= render 'doses/form' %>
+      <div class="col-xs-8">
+<!--         <div class="container"> -->
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="card">
+                <div id="cocktail-name">
+                  <h2> <%= @cocktail.name.capitalize %> </h2>
+                </div>
+                <div id="doseslist">
+                  <ul>
+                    <% @doses.each do |dose| %>
+                      <li><%= link_to (cocktail_dose_path(@cocktail.id, dose.id)),  method: 'delete' do %><i class='fa fa-times' ></i><%end %> <%= dose.ingredient.name.capitalize %>: <%= dose.description %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= render 'doses/form' %>
+            </div>
+          </div>
+<!--         </div> -->
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-offset-4 col-xs-4">
+      <div class="col-xs-4">
         <div id="back">
           <%= link_to 'Back to cocktail list', cocktails_path, class: "btn btn-danger" %>
         </div>

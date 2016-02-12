@@ -2,10 +2,12 @@
   <div class="container">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
-        <div class="col-xs-offset-4 col-xs-4">
-          <div class="card">
-            <h3> <%= cocktail.name %> </h3>
-            <%= link_to 'See the recipe', cocktail_path(cocktail.id), class: "btn btn-success " %>
+        <div class="col-xs-6">
+          <div class="card" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('http://res.cloudinary.com/dqbbl3ece/image/upload/c_fill,h_800,w_800/<%= cocktail.photo.path %>');">
+            <div id="card-text">
+              <h3> <%= cocktail.name %> </h3>
+              <%= link_to 'See the recipe', cocktail_path(cocktail.id), class: "btn btn-success " %>
+            </div>
           </div>
         </div>
       <% end %>
